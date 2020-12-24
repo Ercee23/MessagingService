@@ -2,7 +2,7 @@ import * as chai from 'chai';
 import init from "../../index";
 import chaiHttp = require('chai-http');
 import 'mocha';
-import {getRepository, getConnectionManager} from "typeorm";
+import {getRepository} from "typeorm";
 import {User} from "../../db/entities/User";
 import * as jwt from "jsonwebtoken";
 import {Message} from "../../db/entities/Message";

@@ -121,7 +121,7 @@ export async function block(request: Request, response: Response) {
     const user: User = await userRepository.createQueryBuilder("user")
         .leftJoinAndSelect("user.blocked", "blockedUsers")
         // @ts-ignore
-        .where("user.username = :username", {username: token.username}).getOne()"
+        .where("user.username = :username", {username: token.username}).getOne()
     if (user) {
         // @ts-ignore
         const blockedUser: User = await userRepository.findOne({username: body.username})
