@@ -1,0 +1,10 @@
+FROM node:alpine
+RUN mkdir -p /root/.npm/_logs
+WORKDIR "/app"
+COPY package.json .
+RUN npm install
+COPY . .
+RUN chown -R node: /root/.npm/_logs
+USER node
+CMD ["sh","docker-run-test.sh"]
+
